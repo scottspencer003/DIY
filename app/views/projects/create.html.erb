@@ -1,0 +1,10 @@
+<h1>Error to the face!</h1>
+
+<% if @project.errors.full_messages.any? %>
+<ul>
+	<% @project.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+	<br />
+	<% end %>
+</ul>
+<% end %>

@@ -1,0 +1,15 @@
+<%= render 'shared/project' %>
+
+<br />
+<br />
+<br />
+
+<%= image_tag @project.attachment_one.url(:medium) %>
+
+<%= form_for @project, :url => project_path, :html => { :multipart => true } do |form| %>
+
+  <%= form.file_field :attachment_one %>
+
+  <%= form.submit "Create" %>
+
+<% end %>

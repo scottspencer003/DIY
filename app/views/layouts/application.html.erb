@@ -2,20 +2,40 @@
 <html>
 <head>
   <title>DIY</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <body>
+    <div id="wrapper">
+      <div id="navBar">
+        <div id="logo">My DIY!</div>
 
-	<div id="login-actions">
-		<%= render "shared/login_actions" %>
-	</div>
+        <nav>
+          <ul>
+            <li><%= link_to "Home", projects_path(@project), class: 'link' %></li>
+            <li><%= render "shared/login_actions" %></li>
+          </ul>
+        </nav>
+      </div>
+
+      <br/>
+      <br/>
+      <br/>
+
+
+<div id="content">
+<%= yield %>
+</div>
+
+</body>
 
 	   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
-<%= yield %>
+
 
 </body>
 </html>

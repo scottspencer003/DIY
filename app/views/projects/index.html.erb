@@ -1,0 +1,26 @@
+<br />
+
+
+<% @projects.each do |project| %>
+
+
+<% @project = project %>
+<div id= "project">
+<%= image_tag @project.attachment_one.url(:thumb) %>
+<br />
+<div id="project-title"><%= link_to @project.title, project_path(@project), class: 'link' %></div>
+<br />
+<%= link_to "Edit Project", edit_project_path(@project), class: 'link' %>
+<br />
+
+<%= button_to 'Delete Project', project, method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')" %>
+</div>
+
+<% end %>
+
+
+<br />
+<br />
+<br />
+
+<a href="projects/new"><h1>Create a new Project</h1></a>
